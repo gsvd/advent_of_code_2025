@@ -86,12 +86,6 @@ fn partTwo() !void {
         try ranges.append(allocator, range);
     }
 
-    if (ranges.items.len == 0) {
-        std.debug.print("Total of really Fresh IDs: 0\n", .{});
-        std.debug.print("End of Day 05 Part Two\n", .{});
-        return;
-    }
-
     std.mem.sort(Range, ranges.items, {}, rangeLessThan);
 
     var total: u64 = 0;
